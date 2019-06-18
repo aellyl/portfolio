@@ -1,0 +1,154 @@
+
+
+.vCenter {
+    position:relative;
+    margin-top:10%;
+    padding-top: 10%;
+}
+
+body {
+    background: url("../img/bg-darkInk.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+  }
+
+
+/* home flip links*/
+  .flip-container {
+    margin: auto;
+    perspective: 1000;
+    display: inline-block;
+    border-style: solid;
+    border-color: white;
+    
+}
+.flip-container:hover .back {
+    transform: rotateY(180deg);
+
+}
+.flip-container:hover .front {
+    transform: rotateY(0deg);
+    
+}
+.flip-container{
+    width: 400px;
+    height: 400px;
+    margin-left:30px;
+    
+}
+.flipcard {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    padding-left:50px;
+    padding-top:50px;
+}
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition:1s;
+    width:300px;
+    height:300px;
+
+}
+.front {
+    z-index: 1;
+    transform: rotateY(-180deg);
+    border-style:solid;
+    border-color:#f7ed67;
+    
+}
+.back {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background: url("http://via.placeholder.com/300x300") no-repeat;
+}
+
+.links-container{
+    width:300px;
+    height:300px;
+    color:white;
+    text-align: center;
+    padding-top:120px;
+}
+
+/*change form text color*/
+label{
+    color:white;
+}
+
+input [type=text]{
+    border-color:#b3a8c4 !important;
+    color: white !important;
+}
+
+input [type=email]{
+    border-color:#b3a8c4 !important;
+    color: white !important;
+}
+
+input[type=text]:focus {
+    color: white;
+  }
+
+input[type=email]:focus {
+    color: white;
+  }
+
+textarea:focus{
+    color:white;
+}
+
+::placeholder{
+    color:#b3a8c4 !important;
+}
+
+:-ms-input-placeholder 
+{
+    color:#b3a8c4 !important;
+}
+
+/*horizontal scroll*/
+:root {
+    --gutter: 20px;
+  }
+  
+  .app {
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+  }
+  
+  .app > * {
+    grid-column: 2 / -2;
+  }
+  
+  .app > .full {
+    grid-column: 1 / -1;
+  }
+  
+  .hs {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.5 * var(--gutter));
+  }
+  
+  .hs:before,
+  .hs:after {
+    content: '';
+  }
+  
+  /* Hide scrollbar */
+  .hide-scroll {
+    overflow-y: hidden;
+    margin-bottom: calc(-.1 * var(--gutter));
+  }
