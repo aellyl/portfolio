@@ -19,7 +19,7 @@ body {
     perspective: 1000;
     display: inline-block;
     border-style: solid;
-    border-color: white;
+    border-color: #ced6ff;
     
 }
 .flip-container:hover .back {
